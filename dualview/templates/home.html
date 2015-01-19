@@ -1,0 +1,36 @@
+<html>
+<head><title>Dual View</title>
+
+
+ {% if not ctrlImgId and not expImgId %}
+ 	<h1 class="title">No Images Selected - please select some experimental and/or control images to view.</h1>
+ {% endif %}
+ 	
+ {% if ctrlImgId and expImgId %}
+  <frameset cols="50%,50%">
+{% else %}
+ <frameset cols="100%">
+  
+ {% endif %}
+ 
+ 
+ {% if ctrlImgId %}
+ <frameset rows=85%,15%>
+<frame name="control" id="control" src="https://wwwdev.ebi.ac.uk/mi/media/omero/webgateway/img_detail/{{ctrlImgId.0}}/" name="top"></frame>
+
+<frame name="navControl" id="navControl" src="imageNavigator?controlOrExp=control"></frame>
+</frameset>
+{% endif %}
+
+ {% if expImgId %}
+<frameset rows=85%,15%>
+<frame name="experimental" id="experimental" src="https://wwwdev.ebi.ac.uk/mi/media/omero/webgateway/img_detail/{{expImgId.0}}/" name="top"></frame>
+<frame name="expControl" id="expControl" src="imageNavigator?controlOrExp=experimental"></frame>
+</frameset>
+{% endif %}
+
+</frameset>
+
+
+
+</html>
