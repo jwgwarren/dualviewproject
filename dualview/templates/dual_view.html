@@ -6,7 +6,7 @@
  	<h1 class="title">No Images Selected - please select some experimental and/or control images to view.</h1>
  {% endif %}
 <frameset rows="10%,90%">
-<frame name="mainControls" id="mainControls" src="imageNavigator?controlOrExp=control"></frame>
+<frame name="mainControls" id="mainControls" src="../main_controls"></frame>
  {% if ctrlImgId and expImgId %}
   <frameset cols="50%,50%">
 {% else %}
@@ -19,14 +19,14 @@
  <frameset rows=85%,15%>
 <frame name="control" id="control" src="https://wwwdev.ebi.ac.uk/mi/media/omero/webgateway/img_detail/{{ctrlImgId.0}}/" name="top"></frame>
 
-<frame name="navControl" id="navControl" src="imageNavigator?controlOrExp=control"></frame>
+<frame name="navControl" id="navControl" src="../img_controls"></frame>
 </frameset>
 {% endif %}
 
  {% if expImgId %}
 <frameset rows=85%,15%>
 <frame name="experimental" id="experimental" src="https://wwwdev.ebi.ac.uk/mi/media/omero/webgateway/img_detail/{{expImgId.0}}/" name="top"></frame>
-<frame name="expControl" id="expControl" src="imageNavigator?controlOrExp=experimental"></frame>
+<frame name="expControl" id="expControl" src="../img_controls"></frame>
 </frameset>
 {% endif %}
 
