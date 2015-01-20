@@ -5,7 +5,8 @@
  {% if not ctrlImgId and not expImgId %}
  	<h1 class="title">No Images Selected - please select some experimental and/or control images to view.</h1>
  {% endif %}
- 	
+<frameset rows="10%,90%">
+<frame name="mainControls" id="mainControls" src="imageNavigator?controlOrExp=control"></frame>
  {% if ctrlImgId and expImgId %}
   <frameset cols="50%,50%">
 {% else %}
@@ -31,6 +32,6 @@
 
 </frameset>
 
-
+</frameset>
 
 </html>
