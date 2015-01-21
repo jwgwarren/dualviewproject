@@ -1,5 +1,8 @@
 <html>
 <head><title>Dual View</title>
+{% load staticfiles%}
+<link href="{% static 'dualview/css/default.css' %}" rel="stylesheet" type="text/css" />
+</head>
 
 
  {% if not ctrlImgId and not expImgId %}
@@ -19,14 +22,14 @@
  <frameset rows=85%,15%>
 <frame name="control" id="control" src="https://wwwdev.ebi.ac.uk/mi/media/omero/webgateway/img_detail/{{ctrlImgId.0}}/" name="top"></frame>
 
-<frame name="navControl" id="navControl" src="../img_controls"></frame>
+<frame name="navControl" id="navControl" src="../img_controls?controlOrExp=control"></frame>
 </frameset>
 {% endif %}
 
  {% if expImgId %}
 <frameset rows=85%,15%>
 <frame name="experimental" id="experimental" src="https://wwwdev.ebi.ac.uk/mi/media/omero/webgateway/img_detail/{{expImgId.0}}/" name="top"></frame>
-<frame name="expControl" id="expControl" src="../img_controls"></frame>
+<frame name="expControl" id="expControl" src="../img_controls?controlOrExp=experimental"></frame>
 </frameset>
 {% endif %}
 
