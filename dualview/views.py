@@ -8,10 +8,10 @@ def home_page(request):
     return render_to_response('home_page.html')
 
 def dual_view(request):
-    ctrlImgId = request.GET.getlist('ctrlImgId', None)
-    expImgId = request.GET.getlist('expImgId', None)
+    ctrl = request.GET.getlist('ctrl', None)
+    exp = request.GET.getlist('exp', None)
     return render_to_response('dual_view.html',
-         {'ctrlImgId':ctrlImgId, 'expImgId':expImgId})
+         {'ctrl':ctrl, 'exp':exp})
     
 def main_controls(request):
     return render_to_response('main_controls.html')
